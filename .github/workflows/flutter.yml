@@ -27,3 +27,11 @@ jobs:
 
       - name: Build Flutter app for Android
         run: flutter build apk
+  build-ios:
+    name: iOS
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cedvdb/action-flutter-build-ios@v1
+        with:
+          build-cmd: flutter build ipa
