@@ -31,6 +31,10 @@ jobs:
     name: iOS
     runs-on: macos-latest
     steps:
+      - name: Setup Flutter
+        uses: subosito/flutter-action@master
+        with:
+          channel: stable
       - name: xcode version
         run: /usr/bin/xcodebuild -version
         shell: bash
