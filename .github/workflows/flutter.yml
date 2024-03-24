@@ -31,13 +31,14 @@ jobs:
     name: iOS
     runs-on: macos-latest
     steps:
+      - uses: actions/checkout@v2
+      - name: xcode version
+        run: /usr/bin/xcodebuild -version
+        shell: bash
       - name: Setup Flutter
         uses: subosito/flutter-action@master
         with:
           channel: stable
-      - name: xcode version
-        run: /usr/bin/xcodebuild -version
-        shell: bash
       - name: final build
         run: flutter build ipa
         shell: bash
